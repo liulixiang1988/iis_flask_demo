@@ -1,13 +1,12 @@
-"""
-Routes and views for the flask application.
-"""
+# -*- coding:utf-8 -*-
+
 
 from datetime import datetime
 from flask import render_template
-from TgwlDataCenter import app
+from . import main
 
-@app.route('/')
-@app.route('/home')
+@main.route('/')
+@main.route('/home')
 def home():
     """Renders the home page."""
     return render_template(
@@ -16,7 +15,7 @@ def home():
         year=datetime.now().year,
     )
 
-@app.route('/contact')
+@main.route('/contact')
 def contact():
     """Renders the contact page."""
     return render_template(
@@ -26,7 +25,7 @@ def contact():
         message='Your contact page.'
     )
 
-@app.route('/about')
+@main.route('/about')
 def about():
     """Renders the about page."""
     return render_template(

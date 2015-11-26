@@ -31,15 +31,24 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="manage.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
-    <Compile Include="TgwlDataCenter\config.py">
+    <Compile Include="config.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TgwlDataCenter\main\views.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TgwlDataCenter\main\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="TgwlDataCenter\__init__.py" />
-    <Compile Include="TgwlDataCenter\views.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TgwlDataCenter\" />
+    <Folder Include="TgwlDataCenter\main\" />
     <Folder Include="TgwlDataCenter\static\" />
     <Folder Include="TgwlDataCenter\static\content\" />
     <Folder Include="TgwlDataCenter\static\fonts\" />
