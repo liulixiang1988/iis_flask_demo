@@ -193,4 +193,4 @@ Lib/
 *.pyc
 __pycache__/
 TgwlDataCenter/TgwlDataCenter/__pycache__/__init__.cpython-34.pyc
-TgwlDataCenter/TgwlDataCenter/__pycache__/__init__.cpython-34.pyc
+.idea/
