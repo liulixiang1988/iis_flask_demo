@@ -1,6 +1,6 @@
 #-*- coding:utf-8 -*-
 import os
-
+from urllib.parse import quote_plus
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
@@ -26,8 +26,7 @@ class DevelopmentConfig(Config):
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or '550488300@qq.com'
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') or '123456'
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
-        'sqlite:///'+os.path.join(basedir, 'data-dev.sqlite')
+    SQLALCHEMY_DATABASE_URI = "mssql+pyodbc:///?odbc_connect=%s" % quote_plus('DRIVER={SQL Server Native Client 10.0};SERVER=localhost\sql08;DATABASE=test;UID=sa;PWD=123456')
 
 
 class TestingConfig(Config):

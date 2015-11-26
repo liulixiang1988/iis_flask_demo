@@ -3,12 +3,18 @@
 
 from datetime import datetime
 from flask import render_template
-from . import main
+
+from TgwlDataCenter import db
+from TgwlDataCenter.models import Fruit
+from TgwlDataCenter.main import main
 
 @main.route('/')
 @main.route('/home')
 def home():
     """Renders the home page."""
+    fruit = Fruit(fruit=u"苹果")
+    db.session.add(fruit)
+    db.session.commit()
     return render_template(
         'index.html',
         title='Home Page',
