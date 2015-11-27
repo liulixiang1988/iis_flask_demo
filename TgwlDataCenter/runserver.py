@@ -3,7 +3,7 @@ This script runs the TgwlDataCenter application using a development server.
 """
 
 from os import environ
-from manage import manager
+from manage import app
 
 if __name__ == '__main__':
     HOST = environ.get('SERVER_HOST', 'localhost')
@@ -11,4 +11,4 @@ if __name__ == '__main__':
         PORT = int(environ.get('SERVER_PORT', '5555'))
     except ValueError:
         PORT = 5555
-    manager.run(default_command='runserver')
+    app.run(host=HOST, port=PORT)
